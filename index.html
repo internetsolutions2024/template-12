@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Example-12</title>
+</head>
+
+<body>
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+      body {
+         background-color: #ececec;
+      }
+
+      :root {
+         --mycolor1: #000000;
+         --mycolor2: #d1ff11;
+         --mycolor3: #398DA2;
+         --mycolor4: #6F6F6F;
+         --myfont1: "DM Sans", sans-serif;
+
+      }
+
+      .main {
+         box-sizing: border-box;
+         max-width: 900px;
+         margin: 0 auto;
+         background-color: #fff;
+         font-family: var(--myfont1);
+         text-transform: capitalize;
+      }
+
+      .main a {
+         text-decoration: none;
+         cursor: pointer;
+      }
+
+      .main h3,
+      .main h4 {}
+
+      .main h2 {}
+
+      .main p {}
+
+      .main ul {
+         padding: 0 !important;
+         margin: 0 !important;
+      }
+
+      .main ul li {
+         list-style-type: none !important;
+         padding-left: 20px !important;
+         font-size: 14px !important;
+         line-height: 22px !important;
+         padding: 0 !important;
+         margin: 7px 0 !important;
+      }
+
+      ._container {
+         max-width: 900px;
+         margin: 0 auto;
+      }
+
+      /*--------introduction-----*/
+
+      .introduction {
+         background: url(img/introduction.jpg);
+         background-size: cover;
+
+         color: #fff;
+         padding: 30px;
+      }
+
+      .introduction__container {}
+
+      ._container {}
+
+      .introduction__body {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: end;
+      }
+
+      .introduction__content {
+         flex: 0 1 50%;
+         justify-self: end;
+         text-align: left;
+      }
+
+      .introduction__sub-title {
+
+         line-height: 29px;
+         letter-spacing: 0px;
+         font-weight: 400;
+         font-size: 16px;
+         text-transform: capitalize;
+      }
+
+      .introduction__title {
+         line-height: 55px;
+         letter-spacing: -2px;
+         font-weight: 500;
+         font-size: 55px;
+         margin: 30px 0 70px;
+      }
+
+      .introduction__title span {
+         display: inline-block;
+         background: var(--mycolor2);
+         color: var(--mycolor1);
+         padding: 0 3px;
+      }
+
+
+      .introduction__bottom {
+         display: flex;
+         flex-wrap: wrap;
+         max-width: 70%;
+
+      }
+
+      .bottom {}
+
+      .bottom__item {
+         padding: 5px 20px;
+         border-right: 1px solid #fff;
+      }
+
+      .bottom__item:nth-child(1) {
+         padding-left: 0;
+      }
+
+      .bottom__item:nth-child(3) {
+         border-right: none;
+      }
+
+      @media screen and (max-width: 500px) {
+         .introduction {
+            background-position: right;
+         }
+
+         .introduction__content {
+            flex: 1 1 100%;
+         }
+
+         .introduction__title {
+            font-size: 40px;
+            line-height: 50px;
+            margin: 30px 0;
+         }
+
+         .introduction__bottom {
+            max-width: none;
+         }
+
+         .bottom__item {
+            padding-left: 0;
+            flex: 1 1 100%;
+            border-right: 0;
+         }
+      }
+
+      /*-----quality-----*/
+
+      .quality {
+         padding: 30px;
+      }
+
+      .quality-dark {
+         color: #fff;
+         background-color: var(--mycolor1);
+         padding: 50px 30px 0;
+      }
+
+      .quality__container {}
+
+      .quality__body {}
+
+      .drone-body {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         margin: 0 -10px;
+         align-items: center;
+      }
+
+      .quality__image {}
+
+      .drone-image {
+         margin: 0 10px;
+         flex: 1 1 40%;
+      }
+
+      .drone-image img {
+         width: 100%;
+         display: flex;
+         height: 400px;
+         object-fit: cover;
+      }
+
+      .quality__image img {}
+
+      .quality__content {}
+
+      .drone-content {
+         margin: 10px;
+         flex: 1 1 40%;
+      }
+
+      .quality__sub-title {}
+
+      .drone-sub-title {
+         font-size: 14px;
+         margin: 10px 0;
+      }
+
+      .quality__title {}
+
+      .drone-title {
+         font-size: 32px;
+         margin: 20px 0;
+      }
+
+      .quality__text {}
+
+      .drone-text {
+         font-size: 14px;
+         margin: 10px 0;
+      }
+
+      .quality__button {}
+
+      .drone-button {
+         display: inline-block;
+         padding: 14px 26px;
+         background: var(--mycolor2);
+         color: var(--mycolor1);
+         font-weight: 500;
+         text-decoration: none !important;
+         margin: 10px 0;
+      }
+
+      .quality-light {
+         padding: 0 30px;
+      }
+
+      .quality-light__image {
+         background: url(img/quality-back.jpg);
+         background-size: 50% 100%;
+         background-position: left;
+         background-repeat: no-repeat;
+         height: 400px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .quality-light__image img {
+         width: 80%;
+         height: auto;
+         display: flex;
+
+      }
+
+      @media screen and (max-width: 700px) {
+         .drone-content {
+            flex: 1 1 100%;
+         }
+
+         .quality-light {
+            padding-top: 30px;
+         }
+
+         .quality-light__image {
+            height: 300px;
+         }
+
+         .drone-image img {
+            height: auto;
+         }
+      }
+
+      .benefit {
+         padding: 50px 30px;
+         background-color: var(--mycolor2);
+      }
+
+      .benefit__container {}
+
+      ._container {}
+
+      .benefit__body {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         margin: 0 -10px;
+      }
+
+      .item-benefit {
+         margin: 10px;
+         flex: 1 1 20%;
+         text-align: center;
+      }
+
+      .item-benefit__icon {}
+
+      .item-benefit__icon img {
+         width: 54px;
+      }
+
+      .item-benefit__title {
+         font-weight: 600;
+         font-size: 18px;
+         margin: 20px 0 10px;
+      }
+
+      .item-benefit__text {
+         font-size: 14px;
+         margin: 10px 0 0;
+      }
+
+      @media screen and (max-width: 500px) {
+         .item-benefit {
+            flex: 1 1 100%;
+            margin: 20px 10px;
+         }
+      }
+
+      /*-----advantages-----*/
+
+      .advantages {
+         padding: 100px 30px;
+         color: #fff;
+      }
+
+      .advantages-1 {
+         background: url(img/advatages-01.jpg);
+         background-size: cover;
+         background-attachment: fixed;
+      }
+
+      .advantages__container {}
+
+      ._container {}
+
+      .advantages__body {}
+
+      .advantages__sub-title {}
+
+      .advantages__title {
+         font-size: 45px;
+      }
+
+      .advantages-2 {
+         background: url(img/advatages-02.jpg);
+         background-size: cover;
+         background-attachment: fixed;
+      }
+
+      /*--------whoweare--------*/
+      .whoweare {
+         padding: 30px;
+      }
+
+      .whoweare__container {}
+
+      .whoweare__body {}
+
+      .whoweare__image {}
+
+      .whoweare__image img {
+         height: auto;
+      }
+
+      .whoweare__content {}
+
+      .whoweare__sub-title {}
+
+      .whoweare__title {}
+
+      .whoweare__text {}
+
+      .whoweare__button {}
+
+      /*-----team----*/
+
+      .team {
+         padding: 30px;
+         text-align: center;
+         text-transform: capitalize;
+      }
+
+      .team__container {}
+
+
+      .team__sub-title {}
+
+
+      .team__title {}
+
+
+      .team__body {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         margin: 0 -10px;
+      }
+
+      .team__item {
+         flex: 1 1 20%;
+         margin: 10px;
+      }
+
+      .team__image {}
+
+      .team__image img {
+         width: 100%;
+         height: 270px;
+         object-fit: cover;
+         transition: 0.3s;
+      }
+
+      .team__item:hover .team__image img {
+         filter: brightness(0.9);
+         transition: 0.3s;
+      }
+
+      .team__name {
+         font-weight: 600;
+         margin: 8px 0 2px;
+      }
+
+      .team__position {
+         font-size: 14px;
+         margin: 0 0 8px;
+      }
+
+      @media screen and (max-width: 500px) {
+         .team__item {
+            flex: 1 1 100%;
+         }
+
+         .team__image img {
+
+            height: 400px;
+
+         }
+      }
+
+      /*--------reviews-------*/
+      .reviews {
+         padding: 30px;
+         background: var(--mycolor1);
+         color: #fff;
+         text-align:
+            center;
+      }
+
+      .reviews__container {}
+
+      ._container {}
+
+      .reviews__body {}
+
+      .reviews__icon {}
+
+      .reviews__icon img {
+         width: 44px;
+      }
+
+      .reviews__text {
+         font-size: 18px;
+         font-weight: 600;
+         text-transform: capitalize;
+         margin: 15px 0;
+      }
+
+      .reviews__autor {
+         font-size: 14px;
+      }
+
+      /*-------presentation------*/
+
+      .presentation {
+         padding: 60px 30px 30px;
+         background: url(img/presentation-bg.png);
+         background-size: cover;
+         background-position: center;
+      }
+
+      .presentation__container {}
+
+      ._container {}
+
+      .presentation__image {}
+
+      .presentation__image img {
+         width: 100%;
+      }
+
+      /*------faq-----*/
+      .faq {
+         padding: 30px;
+      }
+
+      .faq__container {}
+
+      ._contaier {}
+
+      .faq__wrapper {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         margin: 0 -10px;
+         align-items: center;
+      }
+
+      .faq__body {
+         margin: 0 10px;
+         flex: 1 1 40%;
+      }
+
+      .faq__sub-title {}
+
+
+      .faq__title {}
+
+      summary::-webkit-details-marker {
+         display: none;
+      }
+
+      summary::-moz-list-bullet {
+         list-style-type: none;
+      }
+
+      summary::marker {
+         display: none;
+      }
+
+      summary {
+         padding: 10px;
+         display: block;
+         font-size: 16px;
+         font-weight: 600;
+         cursor: pointer;
+         position: relative;
+         transition: .3s;
+         border-bottom: 1px solid #dadada;
+      }
+
+      summary:before {
+         top: 8px;
+         right: 5px;
+         color: transparent;
+         width: 20px;
+         height: 20px;
+         font-size: 20px;
+         font-weight: 700;
+         content: "+";
+         position: absolute;
+         color: var(--mycolor1);
+         transition: .5s;
+      }
+
+      summary:hover::before {}
+
+      details[open]>summary:before {
+         transition: .5s;
+         content: "–";
+
+      }
+
+      details[open]>summary {
+         border-bottom: 1px solid transparent;
+         transition: .3s;
+      }
+
+      summary~* {
+         padding: 0 10px;
+      }
+
+      details[open] summary~* {
+         animation: sweep .5s ease-in-out;
+
+      }
+
+      details[open] summary {
+         transition: .3s;
+      }
+
+      @keyframes sweep {
+         0% {
+            opacity: 0;
+         }
+
+         100% {
+            opacity: 1;
+         }
+      }
+
+      summary:focus {
+         outline: 0;
+
+      }
+
+      details {
+         display: block;
+         margin: 10px 0;
+
+      }
+
+      details p {
+         margin: 0 !important;
+      }
+
+      .faq__image {
+         background: url(img/faq-back.jpg);
+         background-size: 50% 100%;
+         background-position: left;
+         background-repeat: no-repeat;
+         height: 400px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .faq__image img {
+         width: 80%;
+         height: auto;
+         display: flex;
+
+      }
+
+      @media screen and (max-width: 500px) {
+         .faq__body {
+            flex: 1 1 100%;
+         }
+
+         .faq__image {
+            height: auto;
+            margin: 20px 0 0;
+         }
+      }
+
+      /*---------blog---------*/
+      .blog {
+         padding: 30px;
+         text-align: center;
+      }
+
+      .blog__container {}
+
+
+      .blog__sub-title {}
+
+
+      .blog__title {}
+
+      .blog__body {
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         margin: 0 -10px;
+      }
+
+      .blog__item {
+         text-align: left;
+         flex: 1 1 30%;
+         margin: 10px;
+      }
+
+      .blog__image {}
+
+      .blog__image img {
+         width: 100%;
+         height: 200px;
+         object-fit: cover;
+         transition: .3s;
+      }
+
+      .blog__item:hover .blog__image img {
+         filter: brightness(0.7);
+         transition: .3s;
+      }
+
+      .blog__data {
+         font-size: 14px;
+         margin: 10px 0 5px;
+      }
+
+      .blog__name {
+         margin: 0;
+         font-weight: 600;
+         font-size: 16px;
+      }
+
+      .blog__text {
+         margin: 5px 0;
+         font-size: 14px;
+      }
+
+      @media screen and (max-width: 500px) {
+         .blog__item {
+            flex: 1 1 100%;
+         }
+      }
+   </style>
+   <div class="main">
+      <section class="introduction">
+         <div class="introduction__container _container">
+            <div class="introduction__body">
+               <div class="introduction__content">
+                  <p class="introduction__sub-title">Drone photographer / videographer</p>
+                  <p class="introduction__title">
+                     <span>Different</span> Through <br>
+                     A Unique <span>Lens</span>
+                  </p>
+               </div>
+            </div>
+            <div class="introduction__bottom bottom">
+               <div class="bottom__item">Move your cursor <br> To Explore Imagery</div>
+               <div class="bottom__item">Stunning Mountain <br> Drone View</div>
+               <div class="bottom__item">The Art of Aerial <br> Videography</div>
+            </div>
+         </div>
+      </section>
+      <section class="quality quality-dark">
+         <div class="quality__container _container"></div>
+         <div class="quality__body drone-body">
+            <div class="quality__image drone-image"><img src="img/quality1.jpg" alt=""></div>
+            <div class="quality__content drone-content">
+               <p class="quality__sub-title drone-sub-title">Finest Quality</p>
+               <h2 class="quality__title drone-title">The Craft of Aerial Cinematography</h2>
+               <p class="quality__text drone-text">Nunc venenatis urna eu erat malesuada tempus. Aliquam dui eget
+                  vehicula in, euismod vitae justo. Quisque porta luctus its established reader will be distracted</p>
+               <a class="quality__button drone-button" href="#">Read More</a>
+            </div>
+         </div>
+      </section>
+      <section class="quality quality-light">
+         <div class="quality__container _container"></div>
+         <div class="quality__body drone-body">
+            <div class="quality__content drone-content">
+               <p class="quality__sub-title drone-sub-title">Finest Quality</p>
+               <h2 class="quality__title drone-title">New Design Of Smart Drone</h2>
+               <p class="quality__text drone-text">Nunc venenatis urna eu erat malesuada tempus. Aliquam dui eget
+                  vehicula in, euismod vitae justo. Quisque porta luctus its established reader will be distracted</p>
+               <a class="quality__button drone-button" href="#">Read More</a>
+            </div>
+            <div class="quality-light__image quality__image drone-image"><img src="img/quality2.png" alt=""></div>
+         </div>
+      </section>
+      <section class="benefit">
+         <div class="benefit__container _container">
+            <div class="benefit__body">
+               <div class="benefit__item item-benefit">
+                  <div class="item-benefit__icon"><img src="img/001-icon.png" alt=""></div>
+                  <h3 class="item-benefit__title">Expert Filming</h3>
+                  <p class="item-benefit__text">Nunc venenatis urna eu erat malesuada tempus.</p>
+               </div>
+               <div class="benefit__item item-benefit">
+                  <div class="item-benefit__icon"><img src="img/002-icon.png" alt=""></div>
+                  <h3 class="item-benefit__title">Professional</h3>
+                  <p class="item-benefit__text">Nunc venenatis urna eu erat malesuada tempus.</p>
+               </div>
+               <div class="benefit__item item-benefit">
+                  <div class="item-benefit__icon"><img src="img/003-icon.png" alt=""></div>
+                  <h3 class="item-benefit__title">Expert Filming</h3>
+                  <p class="item-benefit__text">Nunc venenatis urna eu erat malesuada tempus.</p>
+               </div>
+               <div class="benefit__item item-benefit">
+                  <div class="item-benefit__icon"><img src="img/001-icon.png" alt=""></div>
+                  <h3 class="item-benefit__title">Expert Filming</h3>
+                  <p class="item-benefit__text">Nunc venenatis urna eu erat malesuada tempus.</p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="advantages advantages-1">
+         <div class="advantages__container _container">
+            <div class="advantages__body">
+               <p class="advantages__sub-title drone-sub-title">Advantages</p>
+               <h2 class="advantages__title drone-title">Footage of Safari</h2>
+            </div>
+         </div>
+      </section>
+      <section class="advantages advantages-2">
+         <div class="advantages__container _container">
+            <div class="advantages__body">
+               <p class="advantages__sub-title drone-sub-title">Advantages</p>
+               <h2 class="advantages__title drone-title">Mountain Forest</h2>
+            </div>
+         </div>
+      </section>
+      <section class="whoweare ">
+         <div class="whoweare__container _container"></div>
+         <div class="whoweare__body drone-body">
+            <div class="whoweare__image drone-image"><img src="img/whoweare.jpg" alt=""></div>
+            <div class="whoweare__content drone-content">
+               <p class="whoweare__sub-title drone-sub-title">Finest Quality</p>
+               <h2 class="whoweare__title drone-title">The Craft of Aerial Cinematography</h2>
+               <p class="whoweare__text drone-text">Nunc venenatis urna eu erat malesuada tempus. Aliquam dui eget
+                  vehicula in, euismod vitae justo. Quisque porta luctus its established reader will be distracted</p>
+               <a class="whoweare__button drone-button" href="#">Read More</a>
+            </div>
+         </div>
+      </section>
+      <section class="team">
+         <div class="team__container _container">
+            <p class="team__sub-title drone-sub-title">our team</p>
+            <h2 class="team__title drone-title">every client is a new strategy</h2>
+            <div class="team__body">
+               <div class="team__item">
+                  <div class="team__image"><img src="img/team-01.jpg" alt=""></div>
+                  <p class="team__name">nora gupta</p>
+                  <p class="team__position">sr. trainer</p>
+               </div>
+               <div class="team__item">
+                  <div class="team__image"><img src="img/team-02.jpg" alt=""></div>
+                  <p class="team__name">morr luise</p>
+                  <p class="team__position">sr. trainer</p>
+               </div>
+               <div class="team__item">
+                  <div class="team__image"><img src="img/team-03.jpg" alt=""></div>
+                  <p class="team__name">natasa roin</p>
+                  <p class="team__position">sr. trainer</p>
+               </div>
+               <div class="team__item">
+                  <div class="team__image"><img src="img/team-04.jpg" alt=""></div>
+                  <p class="team__name">josep mark</p>
+                  <p class="team__position">sr. trainer</p>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="reviews">
+         <div class="reviews__container _container">
+            <div class="reviews__body">
+               <div class="reviews__icon">
+                  <img src="img/004-icon.png" alt="">
+               </div>
+               <p class="reviews__text">It is a long established fact that a reader will be distracted by the readable
+                  content of a page when looking layout.</p>
+               <p class="reviews__autor">Studio House</p>
+            </div>
+         </div>
+      </section>
+      <section class="presentation">
+         <div class="presentation__container _container">
+            <div class="presentation__image"><img src="img/presentation.png" alt=""></div>
+         </div>
+      </section>
+      <section class="faq">
+         <div class="faq__container _contaier">
+            <div class="faq__wrapper">
+               <div class="faq__body">
+                  <p class="faq__sub-title drone-sub-title">faq’s</p>
+                  <h2 class="faq__title drone-title">asked any question</h2>
+                  <div itemscope itemtype="https://schema.org/FAQPage" class="faq__questions">
+                     <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">It is a long established fact that?
+                        </summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                           <p itemprop="text">
+                              Nunc venenatis urna eu erat malesuada tempus. Aliquam dui eget vehicula in, euismod vitae
+                              justo.
+                           </p>
+                        </div>
+                     </details>
+                     <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Why do we use it?
+                        </summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                           <p itemprop="text">
+                              Nunc venenatis urna eu erat malesuada tempus. Aliquam dui eget vehicula in, euismod vitae
+                              justo.
+                           </p>
+                        </div>
+                     </details>
+                     <details itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Where does it come from?
+                        </summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                           <p itemprop="text">
+                              Nunc venenatis urna eu erat malesuada tempus. Aliquam dui eget vehicula in, euismod vitae
+                              justo.
+                           </p>
+                        </div>
+                     </details>
+                  </div>
+               </div>
+               <div class="faq__image drone-image"><img src="img/faq.png" alt=""></div>
+            </div>
+         </div>
+      </section>
+      <section class="blog">
+         <div class="blog__container _container">
+            <p class="blog__sub-title drone-sub-title">our blog</p>
+            <h2 class="blog__title drone-title">latest articles</h2>
+            <div class="blog__body">
+               <div class="blog__item">
+                  <div class="blog__image"><img src="img/blog1.jpg" alt=""></div>
+                  <p class="blog__data">29 Apr, 2024
+                  </p>
+                  <p class="blog__name">Introducing new tips to upgrade your aerial photos</p>
+                  <p class="blog__text">Sed placerat tempor velit vitae bibendum. Maecenas vel euismod nisl. Quisque
+                     hendrerit volutpat enim,...</p>
+               </div>
+               <div class="blog__item">
+                  <div class="blog__image"><img src="img/blog2.jpg" alt=""></div>
+                  <p class="blog__data">29 Apr, 2024
+                  </p>
+                  <p class="blog__name">Top 5 locations to capture incredible sunrises</p>
+                  <p class="blog__text">Duis vitae efficitur magna, vitae maximus turpis. Praesent molestie magna eget
+                     velit tempus imperdiet....</p>
+               </div>
+               <div class="blog__item">
+                  <div class="blog__image"><img src="img/blog3.jpg" alt=""></div>
+                  <p class="blog__data">29 Apr, 2024
+                  </p>
+                  <p class="blog__name">We Launch A New Precision Agriculture Project</p>
+                  <p class="blog__text">Nunc nec posuere dui. Etiam porttitor venenatis dignissim. Etiam quis eros
+                     semper, pretium dui a, maximus...</p>
+               </div>
+            </div>
+         </div>
+      </section>
+   </div>
+</body>
+
+</html>
